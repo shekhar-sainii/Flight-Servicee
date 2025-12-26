@@ -18,14 +18,10 @@ const db = {};
 // }
 
 const sequelize = new Sequelize(
-  process.env.DB_NAME,
-  process.env.DB_USER,
-  process.env.DB_PASSWORD,
-  {
-    host: process.env.DB_HOST,
-    dialect: "mysql",   // ✅ MUST BE HERE
-    logging: false,
-  }
+  config.database,
+  config.username,
+  config.password,
+  config
 );
 
 fs
