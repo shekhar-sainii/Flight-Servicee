@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx nodemon src/index",
-    "start": "node src/index"
+    "start": "node src/index",
+    "create:prod": "NODE_ENV=production npx sequelize db:create --config src/config/config.js",
+    "migrate:prod": "NODE_ENV=production npx sequelize db:migrate --config src/config/config.js",
+    "rollback:prod": "NODE_ENV=production npx sequelize db:migrate:undo --config src/config/config.js"
   },
   "keywords": [],
   "author": "",
